@@ -24,4 +24,5 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
-- script: cd vendor/bin && phpunit --version
+- script: cd vendor/bin && phpunit ../../tests
+  displayName: 'Run unit tests'
