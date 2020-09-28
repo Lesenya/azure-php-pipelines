@@ -24,4 +24,4 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
-- script: cd vendor/bin && echo 'Done'
+- script: cd vendor/bin && phpunit --version
