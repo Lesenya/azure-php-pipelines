@@ -35,8 +35,11 @@ steps:
 - task: WhiteSource Bolt@20
   displayName: 'Run whitesource bolt'
   
-- task: PublishBuildArtifacts@1
+- task: ArchiveFiles@2
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    rootFolderOrFile: '$(system.defaultWorkingDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
