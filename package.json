@@ -1,0 +1,26 @@
+{
+  "name": "azure-php-pipelines",
+  "version": "1.0.0",
+  "description": "Testing",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lesenya/azure-php-pipelines.git"
+  },
+  "author": "Lesenya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lesenya/azure-php-pipelines/issues"
+  },
+  "homepage": "https://github.com/Lesenya/azure-php-pipelines#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "jquery": "^3.5.1"
+  }
+}

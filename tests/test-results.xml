@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="C:\xampp\htdocs\Pipelines\azure-php-pipelines\tests" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.014813">
+    <testsuite name="EmailTest" file="C:\xampp\htdocs\Pipelines\azure-php-pipelines\tests\EmailTest.php" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.014813">
+      <testsuite name="EmailTest::testAdd" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.014813">
+        <testcase name="testAdd with data set #0" class="EmailTest" classname="EmailTest" file="C:\xampp\htdocs\Pipelines\azure-php-pipelines\tests\EmailTest.php" line="22" assertions="1" time="0.014704"/>
+        <testcase name="testAdd with data set #1" class="EmailTest" classname="EmailTest" file="C:\xampp\htdocs\Pipelines\azure-php-pipelines\tests\EmailTest.php" line="22" assertions="1" time="0.000061"/>
+        <testcase name="testAdd with data set #2" class="EmailTest" classname="EmailTest" file="C:\xampp\htdocs\Pipelines\azure-php-pipelines\tests\EmailTest.php" line="22" assertions="1" time="0.000049"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
