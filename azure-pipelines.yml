@@ -30,6 +30,8 @@ steps:
   displayName: 'Run unit tests'
   
 - task: PublishTestResults@2
+  displayName: 'Publish unit test results'
+  condition: always()
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/test-*.xml'
