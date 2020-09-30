@@ -10,35 +10,20 @@
 <body>
 <div class="container">
     <div class="container">
-        <h2>Basic Table</h2>
-        <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>
+        <h2>Test Data</h2>
         <table class="table">
             <thead>
             <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
+            <tbody id="product_table_body">
             </tbody>
         </table>
-        <div class="col-12"><button class="btn btn-primary" id="btn_click">Click</button></div>
+        <div class="col-12"><button class="btn btn-primary" id="btn_click">Add new</button></div>
     </div>
 </div>
 </body>
@@ -46,6 +31,16 @@
 <script>
     $("#btn_click").on("click", function (event) {
         console.log("clicked");
+    });
+    $.get("App/ProductController.php?products=all", function (data) {
+        if (data) {
+            let dataArr = JSON.parse(data);
+            let html = ``;
+            dataArr.forEach(item => {
+                html += `<tr><td>${item.ProductId}</td>  <td>${item.ProductName}</td>  <td>${item.Category}</td>  <td>${item.Price}</td></tr>`;
+            });
+            $("#product_table_body").html(html);
+        }
     });
 </script>
 </html>
