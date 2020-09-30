@@ -1,7 +1,9 @@
 {
     "autoload": {
         "classmap": [
-            "src/"
+            "Models/",
+            "App/",
+            "tests/"
         ]
     },
     "require-dev": {
