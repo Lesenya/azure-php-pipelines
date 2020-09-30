@@ -54,4 +54,5 @@ steps:
   inputs:
     azureSubscription: $(serviceConnection)
     appName: $(appName)
+    appType: webApp
     package: $(build.artifactstagingdirectory)/**/*.zip
