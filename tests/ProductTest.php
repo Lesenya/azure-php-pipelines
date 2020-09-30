@@ -16,6 +16,6 @@ class ProductTest extends TestCase {
 
     public function test_get_product_by_id() {
         $TestProduct = $this->Product->getProductById("5f744a1460caa");
-        $this->assertEquals("Product 2", $TestProduct->ProductName);
+        $this->assertEquals("Product 1", $TestProduct->ProductName);
     }
 }
