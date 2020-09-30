@@ -8,6 +8,8 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  appName: 'lesenyaphpapp'
+  serviceConnection: 'php-app-connection'
 
 variables:
   phpVersion: 7.3
@@ -43,3 +45,13 @@ steps:
     replaceExistingArchive: true
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish artifacts'
+  inputs:
+    PathtoPublish: $(build.artifactstagingdirectory)
+
+- task: AzureWebApp@1
+  displayName: 'Deploy web app to azure'
+  inputs:
+    azureSubscription: $(serviceConnection)
+    appName: $(appName)
+    package: $(build.artifactstagingdirectory)/**/*.zip
