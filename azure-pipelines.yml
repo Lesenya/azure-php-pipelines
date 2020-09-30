@@ -11,7 +11,7 @@ pool:
 
 variables:
   phpVersion: 7.3
-  appName: 'appType'
+  appName: 'lesenyaphpapp'
   serviceConnection: 'php-app-connection'
 
 steps:
@@ -34,8 +34,8 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/test-*.xml'
 
-- task: WhiteSource Bolt@20
-  displayName: 'Run whitesource bolt'
+#- task: WhiteSource Bolt@20
+#  displayName: 'Run whitesource bolt'
   
 - task: ArchiveFiles@2
   inputs:
