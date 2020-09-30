@@ -8,11 +8,11 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-  appName: 'lesenyaphpapp'
-  serviceConnection: 'php-app-connection'
 
 variables:
   phpVersion: 7.3
+  appName: 'appType'
+  serviceConnection: 'php-app-connection'
 
 steps:
 - script: |
