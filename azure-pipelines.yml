@@ -26,7 +26,7 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
-- script: cd vendor/bin && phpunit ../../tests --log-junit test-results.xml
+- script: cd vendor/bin && phpunit ../../tests --log-junit unit-test-results.xml
   displayName: 'Run unit tests'
   
 - task: PublishTestResults@2
@@ -34,7 +34,7 @@ steps:
   condition: always()
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/test-*.xml'
+    testResultsFiles: '**/unit-test-*.xml'
 
 #- task: WhiteSource Bolt@20
 #  displayName: 'Run whitesource bolt'
@@ -51,18 +51,19 @@ steps:
   inputs:
     PathtoPublish: $(build.artifactstagingdirectory)
 
-- task: AzureWebApp@1
-  displayName: 'Deploy web app to azure'
-  inputs:
-    azureSubscription: $(serviceConnection)
-    appName: $(appName)
-    appType: webApp
-    package: $(build.artifactstagingdirectory)/**/*.zip
+#- task: AzureWebApp@1
+#  displayName: 'Deploy web app to azure'
+#  inputs:
+#    azureSubscription: $(serviceConnection)
+#    appName: $(appName)
+#    appType: webApp
+#    package: $(build.artifactstagingdirectory)/**/*.zip
 
 - task: owaspzap@1
   inputs:
+    threshold: '100'
     scantype: 'targetedScan'
-    url: 'https://lesenyaphpapp.azurewebsites.net/'
+    url: 'https://lesenyaphpapp.azurewebsites.net'
     
 - bash: |
    sudo npm install -g handlebars-cmd
