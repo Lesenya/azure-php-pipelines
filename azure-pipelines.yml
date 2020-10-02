@@ -61,7 +61,7 @@ steps:
 
 - task: owaspzap@1
   inputs:
-    threshold: '100'
+    threshold: '50'
     scantype: 'targetedScan'
     url: 'https://lesenyademo.azurewebsites.net'
     
