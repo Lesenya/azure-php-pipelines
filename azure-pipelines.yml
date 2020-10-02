@@ -11,8 +11,8 @@ pool:
 
 variables:
   phpVersion: 7.3
-  appName: 'lesenyaphpapp'
-  serviceConnection: 'php-app-serviceconnection'
+  appName: 'lesenyademo'
+  serviceConnection: 'lesenya-app-serviceconnection'
 
 steps:
 - script: |
@@ -51,19 +51,19 @@ steps:
   inputs:
     PathtoPublish: $(build.artifactstagingdirectory)
 
-#- task: AzureWebApp@1
-#  displayName: 'Deploy web app to azure'
-#  inputs:
-#    azureSubscription: $(serviceConnection)
-#    appName: $(appName)
-#    appType: webApp
-#    package: $(build.artifactstagingdirectory)/**/*.zip
+- task: AzureWebApp@1
+  displayName: 'Deploy web app to azure'
+  inputs:
+    azureSubscription: $(serviceConnection)
+    appName: $(appName)
+    appType: webApp
+    package: $(build.artifactstagingdirectory)/**/*.zip
 
 - task: owaspzap@1
   inputs:
     threshold: '100'
     scantype: 'targetedScan'
-    url: 'https://lesenyaphpapp.azurewebsites.net'
+    url: 'https://lesenyademo.azurewebsites.net'
     
 - bash: |
    sudo npm install -g handlebars-cmd
