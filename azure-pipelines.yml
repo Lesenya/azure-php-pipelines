@@ -36,8 +36,8 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/unit-test-*.xml'
 
-#- task: WhiteSource Bolt@20
-#  displayName: 'Run whitesource bolt'
+- task: WhiteSource Bolt@20
+  displayName: 'Run whitesource bolt'
   
 - task: ArchiveFiles@2
   inputs:
